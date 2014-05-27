@@ -381,9 +381,11 @@ def command_freeze(args):
                 )
             )
             dest_prompt = prompt('Save to: ', save_to)
+            """
             if os.path.exists(dest_prompt):
                 print('%s exists. Pick a new filename.' % dest_prompt)
                 continue
+            """
 
             dest = dest_prompt
 
