@@ -327,7 +327,10 @@ def freeze(session):
                 current_cmd = None
 
             if current_cmd:
-                pconf['shell_command'].append(current_cmd)
+                if current_cmd == 'bash' or current_cmd == 'Python':
+                    pconf['shell_command'].append([])
+                else:
+                    pconf['shell_command'].append(current_cmd)
             else:
                 if not len(pconf['shell_command']):
                     pconf = 'pane'
